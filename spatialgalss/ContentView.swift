@@ -1,24 +1,25 @@
-//
-//  ContentView.swift
-//  spatialgalss
-//
-//  Created by Ramin on 3/30/26.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+    @StateObject private var camera = CameraManager()
+    @StateObject private var motion = MotionManager()
 
-#Preview {
-    ContentView()
+    let maxShift: CGFloat = 28
+
+    var body: some View {
+        ZStack {
+            CameraPreviewView(session: camera.session)
+                .ignoresSafeArea()
+
+            NotesPanel()
+                .padding(.horizontal, 12)
+        }
+    }
+
+    func offset(depth: Double) -> CGPoint {
+        CGPoint(
+            x: CGFloat(motion.smoothX) * maxShift * depth,
+            y: CGFloat(-motion.smoothY) * maxShift * depth
+        )
+    }
 }
