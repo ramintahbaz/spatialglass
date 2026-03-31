@@ -174,7 +174,7 @@ struct NotesPanel: View {
                 .frame(maxWidth: .infinity, maxHeight: 44)
                 .compositingGroup()
                 Button(action: { showingNew = true }) {
-                    cutoutCircle(icon: "clock.arrow.circlepath", tint: .orange)
+                    cutoutCircle(icon: "ellipsis")
                 }
             }
             .padding(.horizontal, 12)
@@ -515,7 +515,7 @@ struct NoteDetailView: View {
                                     .frame(width: 44, height: 44)
                             }
                             Button(action: {}) {
-                                Image(systemName: "pencil.tip")
+                                Image(systemName: "pencil.tip.crop.circle")
                                     .font(.system(size: 16, weight: .semibold))
                                     .frame(width: 44, height: 44)
                             }
