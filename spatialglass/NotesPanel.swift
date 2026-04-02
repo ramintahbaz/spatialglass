@@ -290,23 +290,6 @@ struct NotesPanel: View {
         }
     }
 
-    // MARK: - Cutout circle
-
-    func cutoutCircle(icon: String, tint: Color = .black) -> some View {
-        ZStack {
-            Circle()
-                .fill(.ultraThinMaterial)
-                .frame(width: 44, height: 44)
-                .overlay(Circle().stroke(Color.white.opacity(0.2), lineWidth: 0.5))
-            Image(systemName: icon)
-                .font(.system(size: 16, weight: .semibold))
-                .foregroundColor(tint)
-                .blendMode(.destinationOut)
-        }
-        .frame(width: 44, height: 44)
-        .compositingGroup()
-    }
-
     // MARK: - Note card
 
     @ViewBuilder
@@ -404,6 +387,23 @@ struct NotesPanel: View {
         }
         .onAppear { newTitleFocused = true }
     }
+}
+
+// MARK: - Shared helpers
+
+private func cutoutCircle(icon: String, tint: Color = .black) -> some View {
+    ZStack {
+        Circle()
+            .fill(.ultraThinMaterial)
+            .frame(width: 44, height: 44)
+            .overlay(Circle().stroke(Color.white.opacity(0.2), lineWidth: 0.5))
+        Image(systemName: icon)
+            .font(.system(size: 16, weight: .semibold))
+            .foregroundColor(tint)
+            .blendMode(.destinationOut)
+    }
+    .frame(width: 44, height: 44)
+    .compositingGroup()
 }
 
 // MARK: - Note detail
@@ -552,20 +552,6 @@ struct NoteDetailView: View {
         }
     }
 
-    func cutoutCircle(icon: String, tint: Color = .black) -> some View {
-        ZStack {
-            Circle()
-                .fill(.ultraThinMaterial)
-                .frame(width: 44, height: 44)
-                .overlay(Circle().stroke(Color.white.opacity(0.2), lineWidth: 0.5))
-            Image(systemName: icon)
-                .font(.system(size: 16, weight: .semibold))
-                .foregroundColor(tint)
-                .blendMode(.destinationOut)
-        }
-        .frame(width: 44, height: 44)
-        .compositingGroup()
-    }
 }
 
 #Preview("Notes List") {
