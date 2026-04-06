@@ -4,5 +4,7 @@ visionOS-style UI on iPhone using camera passthrough, gyro parallax, and knockou
 
 Note: built for iPhone. Requires camera and motion permissions. Uses AVFoundation for passthrough and CoreMotion for parallax.
 
-https://github.com/user-attachments/assets/2a580c09-8333-4775-b7f7-ac7c7b4737a9
+https://github.com/user-attachments/assets/6501b2ea-095e-4325-a87c-faadde8bf6a4
+
+
 
