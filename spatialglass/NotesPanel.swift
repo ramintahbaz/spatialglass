@@ -299,7 +299,6 @@ struct NotesPanel: View {
                 Text(note.title)
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundColor(.black)
-                    .blendMode(.destinationOut)
                     .lineLimit(1)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -479,7 +478,6 @@ struct NoteDetailView: View {
                                 Text(note.title)
                                     .font(.system(size: 22, weight: .bold))
                                     .foregroundColor(.black)
-                                    .blendMode(.destinationOut)
                                     .frame(maxWidth: .infinity, alignment: .leading)
 
                                 Text(note.body)
